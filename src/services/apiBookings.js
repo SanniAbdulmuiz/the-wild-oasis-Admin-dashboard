@@ -1,6 +1,7 @@
-import { getToday } from "../utils/helpers";
+import { getToday, getTodayString } from "../utils/helpers";
 import supabase from "./supabase";
 import { PAGE_SIZE } from "../utils/constants";
+import { startOfToday, addDays, formatISO } from "date-fns";
 
 export async function getBookings({ filter, sortBy, page }) {
   let query = supabase
@@ -78,20 +79,29 @@ export async function getStaysAfterDate(date) {
   return data;
 }
 
-// Activity means that there is a check in or a check out today
 export async function getStaysTodayActivity() {
+  const today = new Date();
+  const dateOnly = today.toISOString().slice(0, 10);
+  const startOfDay = `${dateOnly}T00:00:00`;
+  const endOfDay = `${dateOnly}T23:59:59`;
+
+  const filterLogic = [
+    `and(status.eq.unconfirmed,startDate.gte.${startOfDay},startDate.lte.${endOfDay})`,
+    `and(status.eq.checked-in,startDate.lte.${endOfDay},endDate.gte.${startOfDay})`,
+  ].join(",");
+
   const { data, error } = await supabase
     .from("bookings")
     .select("*, guests(fullName, nationality, countryFlag)")
-    .or(
-      `and(status.eq.unconfirmed,startDate.eq.${getToday()}),and(status.eq.checked-in,endDate.eq.${getToday()})`
-    )
+    .or(filterLogic)
     .order("created_at");
 
   if (error) {
+    console.error("Supabase error:", error);
     throw new Error("Bookings could not get loaded");
   }
-  return data;
+
+  return data ?? [];
 }
 
 export async function updateBooking(id, obj) {
