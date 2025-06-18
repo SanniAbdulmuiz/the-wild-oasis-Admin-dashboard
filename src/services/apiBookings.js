@@ -1,7 +1,6 @@
-import { getToday, getTodayString } from "../utils/helpers";
+import { getToday } from "../utils/helpers";
 import supabase from "./supabase";
 import { PAGE_SIZE } from "../utils/constants";
-import { startOfToday, addDays, formatISO } from "date-fns";
 
 export async function getBookings({ filter, sortBy, page }) {
   let query = supabase
