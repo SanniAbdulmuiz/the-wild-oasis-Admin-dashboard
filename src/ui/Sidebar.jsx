@@ -10,10 +10,23 @@ const StyledSidebar = styled.aside`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+  z-index: 1002;
+
+  @media (max-width: 75em) {
+    position: fixed;
+    top: 0;
+    left: ${({ $visible }) => ($visible ? "0" : "-100%")};
+    width: 26rem;
+    height: 100%;
+    background-color: var(--color-grey-0);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+  }
 `;
-function Sidebar() {
+
+function Sidebar({ $visible }) {
   return (
-    <StyledSidebar>
+    <StyledSidebar $visible={$visible}>
       <Logo />
       <MainNav />
     </StyledSidebar>
