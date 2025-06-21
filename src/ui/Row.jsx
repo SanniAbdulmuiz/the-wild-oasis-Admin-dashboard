@@ -15,6 +15,10 @@ const Row = styled.div`
     css`
       flex-direction: column;
       gap: 1.6rem;
+
+      @media (max-width: 59em) {
+        gap: 1.6rem;
+      }
     `}
 `;
 
