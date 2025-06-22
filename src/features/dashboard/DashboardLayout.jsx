@@ -15,7 +15,7 @@ const StyledDashboardLayout = styled.div`
   gap: 2.4rem;
 
   @media (max-width: 59em) {
-    gap: 2rem;
+    gap: 1.8rem;
   }
 `;
 

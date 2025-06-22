@@ -18,13 +18,17 @@ const ChartBox = styled.div`
 
   padding: 2.4rem 3.2rem;
   grid-column: 3 / span 2;
-
   & > *:first-child {
     margin-bottom: 1.6rem;
   }
 
   & .recharts-pie-label-text {
     font-weight: 600;
+  }
+
+  @media (max-width: 59em) {
+    grid-column: 1 / -1;
+    font-size: 2.2rem;
   }
 `;
 
@@ -149,7 +153,7 @@ function DurationChart({ confirmedStays }) {
   return (
     <ChartBox>
       <Heading as="h2">Stay duration summary</Heading>
-      <ResponsiveContainer>
+      <ResponsiveContainer width="100%" height={300}>
         <PieChart>
           <Pie
             data={data}

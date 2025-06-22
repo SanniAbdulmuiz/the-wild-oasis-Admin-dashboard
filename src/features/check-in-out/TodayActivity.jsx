@@ -19,6 +19,13 @@ const StyledToday = styled.div`
   gap: 2.4rem;
   grid-column: 1 / span 2;
   padding-top: 2.4rem;
+
+  @media (max-width: 59em) {
+    grid-column: 1 / -1;
+    padding: 2.6rem;
+    gap: 2rem;
+    padding-top: 2.2rem;
+  }
 `;
 
 const TodayList = styled.ul`
@@ -40,13 +47,24 @@ const NoActivity = styled.p`
   margin-top: 0.8rem;
 `;
 
+const Center = styled.div`
+  flex: 1;
+
+  @media (max-width: 59em) {
+    display: flex;
+    justify-content: center;
+  }
+`;
+
 function TodayActivity() {
   const { activities, isLoading } = useTodayActivity();
 
   return (
     <StyledToday>
       <Row type="horizontal">
-        <Heading as="h2">Today</Heading>
+        <Center>
+          <Heading as="h2">Today</Heading>
+        </Center>
       </Row>
 
       {!isLoading ? (

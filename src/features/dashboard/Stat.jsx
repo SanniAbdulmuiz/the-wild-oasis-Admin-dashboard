@@ -16,8 +16,8 @@ const StyledStat = styled.div`
   @media (max-width: 59em) {
     grid-template-columns: 4rem 1fr;
     padding: 1rem;
-    column-gap: 1rem;
-    row-gap: 0.3rem;
+    column-gap: 0.8rem;
+    row-gap: 0.2rem;
   }
 `;
 
@@ -54,6 +54,7 @@ const Title = styled.h5`
 
   @media (max-width: 59em) {
     font-size: 1rem;
+    letter-spacing: 0.2px;
   }
 `;
 
@@ -63,7 +64,7 @@ const Value = styled.p`
   font-weight: 500;
 
   @media (max-width: 59em) {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 0.8;
   }
 `;

@@ -21,6 +21,10 @@ const Main = styled.main`
   padding: 4rem 4.8rem 6.4rem;
   overflow-y: auto;
   position: relative;
+
+  @media (max-width: 59em) {
+    padding: 4rem 4.4rem 6rem;
+  }
 `;
 
 const Container = styled.div`
@@ -29,6 +33,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+
+  @media (max-width: 59em) {
+    gap: 3rem;
+  }
 `;
 
 const SidebarToggle = styled.button`
