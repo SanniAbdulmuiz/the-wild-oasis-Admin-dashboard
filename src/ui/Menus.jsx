@@ -26,6 +26,11 @@ const StyledToggle = styled.button`
     width: 2.4rem;
     height: 2.4rem;
     color: var(--color-grey-700);
+
+    @media (max-width: 52em) {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
   }
 `;
 
@@ -52,6 +57,11 @@ const StyledButton = styled.button`
   display: flex;
   align-items: center;
   gap: 1.6rem;
+
+  @media (max-width: 52em) {
+    padding: 1rem 1.8rem;
+    font-size: 1rem;
+  }
 
   &:hover {
     background-color: var(--color-grey-50);

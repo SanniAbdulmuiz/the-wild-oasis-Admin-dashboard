@@ -24,12 +24,20 @@ const Cabin = styled.div`
   font-weight: 600;
   color: var(--color-grey-600);
   font-family: "Sono";
+
+  @media (max-width: 52em) {
+    font-size: 1rem;
+  }
 `;
 
 const Stacked = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
+
+  @media (max-width: 52em) {
+    gap: 0.1rem;
+  }
 
   & span:first-child {
     font-weight: 500;
@@ -38,6 +46,10 @@ const Stacked = styled.div`
   & span:last-child {
     color: var(--color-grey-500);
     font-size: 1.2rem;
+
+    @media (max-width: 52em) {
+      font-size: 1rem;
+    }
   }
 `;
 

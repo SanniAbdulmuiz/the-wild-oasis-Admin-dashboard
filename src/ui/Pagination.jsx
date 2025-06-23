@@ -14,6 +14,10 @@ const P = styled.p`
   font-size: 1.4rem;
   margin-left: 0.8rem;
 
+  @media (max-width: 52em) {
+    font-size: 1.2rem;
+    margin-left: 0.6rem;
+  }
   & span {
     font-weight: 600;
   }
@@ -40,17 +44,36 @@ const PaginationButton = styled.button`
   padding: 0.6rem 1.2rem;
   transition: all 0.3s;
 
+  @media (max-width: 52em) {
+    font-size: 1.2rem;
+    gap: 0.2rem;
+    padding: 0.4rem 0.8rem;
+  }
+
   &:has(span:last-child) {
     padding-left: 0.4rem;
+
+    @media (max-width: 52em) {
+      padding-right: 0.2rem;
+    }
   }
 
   &:has(span:first-child) {
     padding-right: 0.4rem;
+
+    @media (max-width: 52em) {
+      padding-right: 0.2rem;
+    }
   }
 
   & svg {
     height: 1.8rem;
     width: 1.8rem;
+
+    @media (max-width: 52em) {
+      height: 1.2rem;
+      width: 1.2rem;
+    }
   }
 
   &:hover:not(:disabled) {

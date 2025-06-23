@@ -19,6 +19,9 @@ const Row = styled.div`
       @media (max-width: 59em) {
         gap: 1.2rem;
       }
+      @media (max-width: 52em) {
+        gap: 1rem;
+      }
     `}
 `;
 
