@@ -25,6 +25,9 @@ const Main = styled.main`
   @media (max-width: 59em) {
     padding: 4rem 4.4rem 6rem;
   }
+  @media (max-width: 34em) {
+    padding: 2rem 2.2rem 3rem;
+  }
 `;
 
 const Container = styled.div`
@@ -36,6 +39,9 @@ const Container = styled.div`
 
   @media (max-width: 59em) {
     gap: 3rem;
+  }
+  @media (max-width: 34em) {
+    gap: 1.5rem;
   }
 `;
 
@@ -53,6 +59,11 @@ const SidebarToggle = styled.button`
     z-index: 1001;
     color: var(--color-grey-900);
     cursor: pointer;
+  }
+
+  @media (max-width: 34em) {
+    font-size: 2rem;
+    top: 0.8rem;
   }
 `;
 

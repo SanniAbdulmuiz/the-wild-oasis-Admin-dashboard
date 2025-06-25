@@ -16,6 +16,9 @@ const NavList = styled.ul`
   @media (max-width: 59em) {
     gap: 0.8rem;
   }
+  @media (max-width: 34em) {
+    gap: 0.5rem;
+  }
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -35,6 +38,11 @@ const StyledNavLink = styled(NavLink)`
       gap: 1rem;
       font-size: 1.4rem;
       padding: 1rem 1.4rem;
+    }
+    @media (max-width: 34em) {
+      gap: 0.7rem;
+      font-size: 1rem;
+      padding: 0.7rem 1rem;
     }
   }
 
@@ -57,6 +65,10 @@ const StyledNavLink = styled(NavLink)`
     @media (max-width: 59em) {
       width: 2.2rem;
       height: 2.2rem;
+    }
+    @media (max-width: 34em) {
+      width: 1.5rem;
+      height: 1.5rem;
     }
   }
 

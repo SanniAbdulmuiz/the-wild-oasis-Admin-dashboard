@@ -37,6 +37,11 @@ const FilterButton = styled.button`
     padding: 0.4rem 0.6rem;
   }
 
+  @media (max-width: 34em) {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.3rem;
+  }
+
   &:hover:not(:disabled) {
     background-color: var(--color-brand-600);
     color: var(--color-brand-50);

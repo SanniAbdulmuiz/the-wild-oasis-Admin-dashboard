@@ -8,6 +8,11 @@ const StyledUserAvatar = styled.div`
   font-weight: 500;
   font-size: 1.4rem;
   color: var(--color-grey-600);
+
+  @media (max-width: 34em) {
+    gap: 0.8rem;
+    font-size: 1rem;
+  }
 `;
 
 const Avatar = styled.img`
@@ -19,6 +24,10 @@ const Avatar = styled.img`
   object-position: center;
   border-radius: 50%;
   outline: 2px solid var(--color-grey-100);
+
+  @media (max-width: 34em) {
+    width: 2rem;
+  }
 `;
 
 function UserAvatar() {

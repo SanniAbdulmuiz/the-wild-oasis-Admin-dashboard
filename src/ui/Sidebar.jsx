@@ -22,6 +22,11 @@ const StyledSidebar = styled.aside`
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
     transition: left 0.3s ease;
   }
+  @media (max-width: 34em) {
+    padding: 1.5rem 1.2rem;
+    gap: 1rem;
+    width: 15rem;
+  }
 `;
 
 function Sidebar({ $visible }) {

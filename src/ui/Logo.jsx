@@ -12,6 +12,9 @@ const Img = styled.img`
   @media (max-width: 59em) {
     height: 7rem;
   }
+  @media (max-width: 34em) {
+    height: 4.5rem;
+  }
 `;
 
 function Logo() {
