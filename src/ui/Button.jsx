@@ -32,6 +32,9 @@ const sizes = {
       font-size: 1.4rem;
       padding: 1rem 1.8rem;
     }
+    @media (max-width: 34em) {
+      font-size: 1.2rem;
+    }
   `,
 };
 
