@@ -26,6 +26,12 @@ const StyledToday = styled.div`
     gap: 2rem;
     padding-top: 2.2rem;
   }
+
+  @media (max-width: 34em) {
+    padding: 2rem;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
 `;
 
 const TodayList = styled.ul`
@@ -45,6 +51,10 @@ const NoActivity = styled.p`
   font-size: 1.8rem;
   font-weight: 500;
   margin-top: 0.8rem;
+
+  @media (max-width: 59em) {
+    font-size: 1.2rem;
+  }
 `;
 
 const Center = styled.div`

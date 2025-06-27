@@ -9,6 +9,7 @@ import {
   Tooltip,
 } from "recharts";
 import { useDarkMode } from "../../context/DarkModeContext";
+import useWindowWidth from "../../hooks/useWindowWidth";
 
 const ChartBox = styled.div`
   /* Box */
@@ -31,15 +32,14 @@ const ChartBox = styled.div`
     grid-column: 1 / -1;
     font-size: 1.5rem;
   }
+  @media (max-width: 34em) {
+    padding: 2rem 2rem;
+    font-size: 1rem;
+  }
 `;
 
 const ResponsiveWrapper = styled.div`
   width: 100%;
-
-  @media (max-width: 59em) {
-    width: 80%;
-    margin: 0 auto; /* Optional: center it horizontally */
-  }
 `;
 
 const startDataLight = [
@@ -159,6 +159,8 @@ function DurationChart({ confirmedStays }) {
   const { isDarkMode } = useDarkMode();
   const startData = isDarkMode ? startDataDark : startDataLight;
   const data = prepareData(startData, confirmedStays);
+  const width = useWindowWidth();
+  const isSmall = width <= 34 * 16; // 34em in px (≈544px)
 
   return (
     <ChartBox>
@@ -170,8 +172,8 @@ function DurationChart({ confirmedStays }) {
               data={data}
               nameKey="duration"
               dataKey="value"
-              innerRadius={85}
-              outerRadius={110}
+              innerRadius={isSmall ? "50" : "85"}
+              outerRadius={isSmall ? "80" : "110"}
               cx="40%"
               cy="50%"
               paddingAngle={3}
@@ -187,10 +189,10 @@ function DurationChart({ confirmedStays }) {
             <Tooltip />
             <Legend
               verticalAlign="middle"
-              align="right"
-              width="30%"
+              align={isSmall ? "left" : "right"}
+              width={isSmall ? "25%" : "30%"}
               layout="vertical"
-              iconSize={15}
+              iconSize={isSmall ? 10 : 15}
               iconType="circle"
             />
           </PieChart>

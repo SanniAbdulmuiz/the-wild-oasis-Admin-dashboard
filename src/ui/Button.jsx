@@ -12,6 +12,9 @@ const sizes = {
       font-size: 1.2rem;
       padding: 0.2rem 0.6rem;
     }
+    @media (max-width: 34em) {
+      font-size: 0.8rem;
+    }
   `,
   medium: css`
     font-size: 1.4rem;
@@ -22,6 +25,9 @@ const sizes = {
       font-size: 1.2rem;
       padding: 1rem 1.3rem;
     }
+    @media (max-width: 34em) {
+      font-size: 0.8rem;
+    }
   `,
   large: css`
     font-size: 1.6rem;
@@ -29,11 +35,11 @@ const sizes = {
     font-weight: 500;
 
     @media (max-width: 52em) {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       padding: 1rem 1.8rem;
     }
     @media (max-width: 34em) {
-      font-size: 1.2rem;
+      font-size: 0.8rem;
     }
   `,
 };
