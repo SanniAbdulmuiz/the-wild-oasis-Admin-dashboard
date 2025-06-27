@@ -19,6 +19,12 @@ const StyledStat = styled.div`
     column-gap: 0.8rem;
     row-gap: 0.2rem;
   }
+
+  @media (max-width: 34em) {
+    grid-template-columns: 3rem 1fr;
+    padding: 1rem;
+    column-gap: 0.5rem;
+  }
 `;
 
 const Icon = styled.div`
@@ -56,6 +62,9 @@ const Title = styled.h5`
     font-size: 1rem;
     letter-spacing: 0.2px;
   }
+  @media (max-width: 34em) {
+    font-size: 1rem;
+  }
 `;
 
 const Value = styled.p`
@@ -66,6 +75,9 @@ const Value = styled.p`
   @media (max-width: 59em) {
     font-size: 1.3rem;
     line-height: 0.8;
+  }
+  @media (max-width: 34em) {
+    font-size: 1rem;
   }
 `;
 

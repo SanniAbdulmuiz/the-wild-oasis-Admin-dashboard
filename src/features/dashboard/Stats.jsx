@@ -6,6 +6,19 @@ import {
 } from "react-icons/hi2";
 import Stat from "./Stat";
 import { formatCurrency } from "../../utils/helpers";
+import styled from "styled-components";
+
+const StatsGrid = styled.p`
+  @media (max-width: 34em) {
+    grid-column: 1 / -1;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+`;
 
 function Stats({ bookings, confirmedStays, numDays, cabinCount }) {
   // 1.
@@ -24,7 +37,7 @@ function Stats({ bookings, confirmedStays, numDays, cabinCount }) {
   // num checked in nights / all available nights (num days * num cabins)
 
   return (
-    <>
+    <StatsGrid>
       <Stat
         title="Bookings"
         color="blue"
@@ -49,7 +62,7 @@ function Stats({ bookings, confirmedStays, numDays, cabinCount }) {
         icon={<HiOutlineChartBar />}
         value={Math.round(occupation * 100) + "%"}
       />
-    </>
+    </StatsGrid>
   );
 }
 
