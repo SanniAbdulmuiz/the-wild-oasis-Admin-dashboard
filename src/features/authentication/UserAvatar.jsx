@@ -11,7 +11,7 @@ const StyledUserAvatar = styled.div`
 
   @media (max-width: 34em) {
     gap: 0.8rem;
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 `;
 
@@ -26,7 +26,7 @@ const Avatar = styled.img`
   outline: 2px solid var(--color-grey-100);
 
   @media (max-width: 34em) {
-    width: 2rem;
+    width: 2.3rem;
   }
 `;
 

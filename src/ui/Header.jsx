@@ -13,7 +13,7 @@ const StyledHeader = styled.header`
   justify-content: flex-end;
 
   @media (max-width: 34em) {
-    padding: 0.5rem 2.4rem;
+    padding: 1.2rem 2.4rem;
     gap: 1.2rem;
   }
 `;

@@ -62,8 +62,8 @@ const SidebarToggle = styled.button`
   }
 
   @media (max-width: 34em) {
-    font-size: 2rem;
-    top: 0.8rem;
+    font-size: 2.4rem;
+    top: 1.5rem;
   }
 `;
 
