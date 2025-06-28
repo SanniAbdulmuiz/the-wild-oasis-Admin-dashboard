@@ -29,7 +29,7 @@ const Heading = styled.h1`
       font-size: 2rem;
       font-weight: 600;
       @media (max-width: 34em) {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
       }
     `}
     

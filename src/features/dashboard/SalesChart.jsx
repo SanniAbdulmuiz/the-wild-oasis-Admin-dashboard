@@ -12,6 +12,7 @@ import {
 } from "recharts";
 import { useDarkMode } from "../../context/DarkModeContext";
 import { eachDayOfInterval, format, isSameDay, subDays } from "date-fns";
+import useWindowWidth from "../../hooks/useWindowWidth";
 
 const StyledSalesChart = styled(DashboardBox)`
   grid-column: 1 / -1;
@@ -28,6 +29,8 @@ const StyledSalesChart = styled(DashboardBox)`
 
 function SalesChart({ bookings, numDays }) {
   const { isDarkMode } = useDarkMode();
+  const width = useWindowWidth();
+  const isSmall = width <= 34 * 16;
 
   const allDates = eachDayOfInterval({
     start: subDays(new Date(), numDays - 1),
@@ -67,7 +70,7 @@ function SalesChart({ bookings, numDays }) {
         {format(allDates.at(-1), "MMM dd yyyy")}{" "}
       </Heading>
 
-      <ResponsiveContainer height={300} width="100%">
+      <ResponsiveContainer height={isSmall ? 200 : 300} width="100%">
         <AreaChart data={data}>
           <XAxis
             dataKey="label"
