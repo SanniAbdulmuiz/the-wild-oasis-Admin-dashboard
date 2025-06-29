@@ -8,11 +8,12 @@ import Stat from "./Stat";
 import { formatCurrency } from "../../utils/helpers";
 import styled from "styled-components";
 
-const StatsGrid = styled.p`
+const StatsGrid = styled.div`
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
   @media (max-width: 34em) {
-    grid-column: 1 / -1;
-
-    display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 columns */
     gap: 1.5rem;
     justify-content: center;
