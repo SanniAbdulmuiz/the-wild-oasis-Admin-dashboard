@@ -13,7 +13,7 @@ const Img = styled.img`
     height: 7rem;
   }
   @media (max-width: 34em) {
-    height: 4.5rem;
+    height: 5.5rem;
   }
 `;
 
