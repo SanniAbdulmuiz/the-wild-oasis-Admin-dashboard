@@ -41,7 +41,7 @@ const StyledNavLink = styled(NavLink)`
     }
     @media (max-width: 34em) {
       gap: 0.7rem;
-      font-size: 1rem;
+      font-size: 1.2rem;
       padding: 0.7rem 1rem;
     }
   }
@@ -67,8 +67,8 @@ const StyledNavLink = styled(NavLink)`
       height: 2.2rem;
     }
     @media (max-width: 34em) {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 1.7rem;
+      height: 1.7rem;
     }
   }
 

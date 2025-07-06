@@ -8,6 +8,9 @@ const TableOperations = styled.div`
   @media (max-width: 59em) {
     gap: 1.2rem;
   }
+  @media (max-width: 34em) {
+    gap: 1rem;
+  }
 `;
 
 export default TableOperations;
