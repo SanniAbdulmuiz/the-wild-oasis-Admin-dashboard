@@ -9,7 +9,8 @@ const TableOperations = styled.div`
     gap: 1.2rem;
   }
   @media (max-width: 34em) {
-    gap: 1rem;
+    flex-direction: column;
+    gap: 3rem;
   }
 `;
 
