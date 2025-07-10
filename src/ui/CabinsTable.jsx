@@ -21,12 +21,6 @@ const CommonRow = styled.div`
   align-items: center;
   transition: none;
 
-  @media (max-width: 34em) {
-    grid-template-columns: 1fr;
-    row-gap: 1rem;
-    padding: 1rem;
-  }
-
   @media (max-width: 52em) {
     column-gap: 0.8rem;
   }
@@ -40,10 +34,6 @@ const StyledHeader = styled(CommonRow)`
   letter-spacing: 0.4px;
   font-weight: 600;
   color: var(--color-grey-600);
-
-  @media (max-width: 34em) {
-    display: none;
-  }
 `;
 
 const StyledRow = styled(CommonRow)`
@@ -51,20 +41,6 @@ const StyledRow = styled(CommonRow)`
 
   &:not(:last-child) {
     border-bottom: 1px solid var(--color-grey-100);
-  }
-
-  @media (max-width: 34em) {
-    position: relative;
-    padding-top: 2.4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.2rem;
-    border: 1px solid var(--color-grey-100);
-    border-radius: 0.6rem;
-    padding: 1.6rem;
-    margin-bottom: 1.6rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
   }
 `;
 
@@ -97,9 +73,9 @@ const Empty = styled.p`
 
 const TableContext = createContext();
 
-function Table({ columns, children, responsive = true }) {
+function CabinsTable({ columns, children }) {
   return (
-    <TableContext.Provider value={{ columns, responsive }}>
+    <TableContext.Provider value={{ columns }}>
       <StyledTable role="table">{children}</StyledTable>
     </TableContext.Provider>
   );
@@ -128,9 +104,9 @@ function Body({ data, render }) {
   return <StyledBody>{data.map(render)}</StyledBody>;
 }
 
-Table.Header = Header;
-Table.Body = Body;
-Table.Row = Row;
-Table.Footer = Footer;
+CabinsTable.Header = Header;
+CabinsTable.Body = Body;
+CabinsTable.Row = Row;
+CabinsTable.Footer = Footer;
 
-export default Table;
+export default CabinsTable;

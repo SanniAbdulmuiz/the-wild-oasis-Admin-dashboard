@@ -58,6 +58,14 @@ const Amount = styled.div`
   font-weight: 500;
 `;
 
+const CellActions = styled.div`
+  @media (max-width: 34em) {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+  }
+`;
+
 function BookingRow({
   booking: {
     id: bookingId,
@@ -83,74 +91,91 @@ function BookingRow({
 
   return (
     <Table.Row>
-      <Cabin>{cabinName}</Cabin>
+      <div className="cell">
+        <span className="label">Cabin</span>
+        <Cabin>{cabinName}</Cabin>
+      </div>
 
-      <Stacked>
-        <span>{guestName}</span>
-        <span>{email}</span>
-      </Stacked>
+      <div className="cell">
+        <span className="label">Guest</span>
+        <Stacked>
+          <span>{guestName}</span>
+          <span>{email}</span>
+        </Stacked>
+      </div>
 
-      <Stacked>
-        <span>
-          {isToday(new Date(startDate))
-            ? "Today"
-            : formatDistanceFromNow(startDate)}{" "}
-          &rarr; {numNights} night stay
-        </span>
-        <span>
-          {format(new Date(startDate), "MMM dd yyyy")} &mdash;{" "}
-          {format(new Date(endDate), "MMM dd yyyy")}
-        </span>
-      </Stacked>
+      <div className="cell">
+        <span className="label">Dates</span>
+        <Stacked>
+          <span>
+            {isToday(new Date(startDate))
+              ? "Today"
+              : formatDistanceFromNow(startDate)}{" "}
+            &rarr; {numNights} night stay
+          </span>
+          <span>
+            {format(new Date(startDate), "MMM dd yyyy")} &mdash;{" "}
+            {format(new Date(endDate), "MMM dd yyyy")}
+          </span>
+        </Stacked>
+      </div>
 
-      <Tag type={statusToTagName[status]}>{status.replace("-", " ")}</Tag>
+      <div className="cell">
+        <span className="label">Status</span>
+        <Tag type={statusToTagName[status]}>{status.replace("-", " ")}</Tag>
+      </div>
 
-      <Amount>{formatCurrency(totalPrice)}</Amount>
+      <div className="cell">
+        <span className="label">Amount</span>
+        <Amount>{formatCurrency(totalPrice)}</Amount>
+      </div>
 
-      <Modal>
-        <Menus.Menu>
-          <Menus.Toggle id={bookingId} />
-          <Menus.List id={bookingId}>
-            <Menus.Button
-              icon={<HiEye />}
-              onClick={() => navigate(`/bookings/${bookingId}`)}
-            >
-              See details
-            </Menus.Button>
-
-            {status === "unconfirmed" && (
+      <CellActions className="cell">
+        <Modal>
+          <Menus.Menu>
+            <Menus.Toggle id={bookingId} />
+            <Menus.List id={bookingId}>
               <Menus.Button
-                icon={<HiArrowDownOnSquare />}
-                onClick={() => navigate(`/checkin/${bookingId}`)}
+                icon={<HiEye />}
+                onClick={() => navigate(`/bookings/${bookingId}`)}
               >
-                Check in
+                See details
               </Menus.Button>
-            )}
 
-            {status === "checked-in" && (
-              <Menus.Button
-                icon={<HiArrowUpOnSquare />}
-                onClick={() => checkout(bookingId)}
-                disabled={isCheckingOut}
-              >
-                Check out
-              </Menus.Button>
-            )}
+              {status === "unconfirmed" && (
+                <Menus.Button
+                  icon={<HiArrowDownOnSquare />}
+                  onClick={() => navigate(`/checkin/${bookingId}`)}
+                >
+                  Check in
+                </Menus.Button>
+              )}
 
-            <Modal.Open opens="delete">
-              <Menus.Button icon={<HiTrash />}>Delete booking</Menus.Button>
-            </Modal.Open>
-          </Menus.List>
-        </Menus.Menu>
+              {status === "checked-in" && (
+                <Menus.Button
+                  icon={<HiArrowUpOnSquare />}
+                  onClick={() => checkout(bookingId)}
+                  disabled={isCheckingOut}
+                >
+                  Check out
+                </Menus.Button>
+              )}
 
-        <Modal.Window name="delete">
-          <ConfirmDelete
-            resourceName="booking"
-            disabled={isDeleting}
-            onConfirm={() => deleteBooking(bookingId)}
-          />
-        </Modal.Window>
-      </Modal>
+              <Modal.Open opens="delete">
+                <Menus.Button icon={<HiTrash />}>Delete booking</Menus.Button>
+              </Modal.Open>
+            </Menus.List>
+          </Menus.Menu>
+
+          <Modal.Window name="delete">
+            <ConfirmDelete
+              resourceName="booking"
+              disabled={isDeleting}
+              onConfirm={() => deleteBooking(bookingId)}
+            />
+          </Modal.Window>
+        </Modal>
+      </CellActions>
     </Table.Row>
   );
 }

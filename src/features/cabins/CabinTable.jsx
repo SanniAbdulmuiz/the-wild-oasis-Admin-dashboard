@@ -1,33 +1,10 @@
 import Spinner from "../../ui/Spinner";
 import CabinRow from "./CabinRow";
 import { useCabins } from "./useCabins";
-import Table from "../../ui/Table";
+import CabinsTable from "../../ui/CabinsTable";
 import Menus from "../../ui/Menus";
 import { useSearchParams } from "react-router-dom";
 import Empty from "../../ui/Empty";
-//import styled from "styled-components";
-
-// const Table = styled.div`
-//   border: 1px solid var(--color-grey-200)
-//   font-size: 1.4rem
-//   background-color: 1px solid var(--color-grey-0)
-//   border-radius: 7px
-//   overflow: hidden
-
-// `;
-
-// const TableHeader = styled.div`
-//   display: grid;
-//   grid-template-columns: 0.6fr 1.8fr 2.2fr 1fr 1fr 1fr;
-//   column-gap: 2.4rem;
-//   align-items: center;
-//   padding: 1.4rem 2.4rem;
-//   text-transform: uppercase:
-//   background-color: var(--color-grey-100)
-//   letter-spacing: 0.4px
-//     border-bottom: 1px solid var(--color-grey-100);
-//
-// `;
 
 function CabinTable() {
   const { isLoading, cabins } = useCabins();
@@ -56,23 +33,23 @@ function CabinTable() {
 
   return (
     <Menus>
-      <Table columns="0.6fr 1.8fr 2.2fr 1fr 1fr 1fr">
-        <Table.Header>
+      <CabinsTable columns="0.6fr 1.8fr 2.2fr 1fr 1fr 1fr">
+        <CabinsTable.Header>
           <div></div>
           <div>Cabin</div>
           <div>Capacity</div>
           <div>Price</div>
           <div>Discount</div>
           <div></div>
-        </Table.Header>
+        </CabinsTable.Header>
 
-        <Table.Body
+        <CabinsTable.Body
           // data={cabins}
           // data={filteredCabins}
           data={sortedCabins}
           render={(cabin) => <CabinRow cabin={cabin} key={cabin.id} />}
         />
-      </Table>
+      </CabinsTable>
     </Menus>
   );
 }

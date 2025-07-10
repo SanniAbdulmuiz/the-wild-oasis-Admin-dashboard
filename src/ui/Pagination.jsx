@@ -18,6 +18,9 @@ const P = styled.p`
     font-size: 1.2rem;
     margin-left: 0.6rem;
   }
+  @media (max-width: 34em) {
+    font-size: 1rem;
+  }
   & span {
     font-weight: 600;
   }
@@ -50,6 +53,10 @@ const PaginationButton = styled.button`
     padding: 0.4rem 0.8rem;
   }
 
+  @media (max-width: 34em) {
+    font-size: 1rem;
+  }
+
   &:has(span:last-child) {
     padding-left: 0.4rem;
 
@@ -73,6 +80,10 @@ const PaginationButton = styled.button`
     @media (max-width: 52em) {
       height: 1.2rem;
       width: 1.2rem;
+    }
+    @media (max-width: 34em) {
+      height: 1rem;
+      width: 1rem;
     }
   }
 
