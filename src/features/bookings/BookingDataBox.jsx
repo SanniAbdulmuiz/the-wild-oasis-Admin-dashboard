@@ -31,6 +31,11 @@ const Header = styled.header`
   align-items: center;
   justify-content: space-between;
 
+  @media (max-width: 34em) {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
   svg {
     height: 3.2rem;
     width: 3.2rem;
@@ -42,17 +47,31 @@ const Header = styled.header`
     gap: 1.6rem;
     font-weight: 600;
     font-size: 1.8rem;
+
+    @media (max-width: 34em) {
+      gap: 1.3rem;
+      font-size: 1.2rem;
+    }
   }
 
   & span {
     font-family: "Sono";
     font-size: 2rem;
     margin-left: 4px;
+
+    @media (max-width: 34em) {
+      font-size: 1.2rem;
+      margin-left: 2px;
+    }
   }
 `;
 
 const Section = styled.section`
   padding: 3.2rem 4rem 1.2rem;
+
+  @media (max-width: 34em) {
+    padding: 2rem 2rem 1rem;
+  }
 `;
 
 const Guest = styled.div`
@@ -62,6 +81,13 @@ const Guest = styled.div`
   margin-bottom: 1.6rem;
   color: var(--color-grey-500);
 
+  @media (max-width: 34em) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+    font-size: 1rem;
+    margin-bottom: 1.3rem;
+  }
   & p:first-of-type {
     font-weight: 500;
     color: var(--color-grey-700);
@@ -76,6 +102,10 @@ const Price = styled.div`
   border-radius: var(--border-radius-sm);
   margin-top: 2.4rem;
 
+  @media (max-width: 34em) {
+    padding: 0.8rem 1.5rem;
+  }
+
   background-color: ${(props) =>
     props.isPaid ? "var(--color-green-100)" : "var(--color-yellow-100)"};
   color: ${(props) =>
@@ -85,6 +115,10 @@ const Price = styled.div`
     text-transform: uppercase;
     font-size: 1.4rem;
     font-weight: 600;
+
+    @media (max-width: 34em) {
+      font-size: 1rem;
+    }
   }
 
   svg {
