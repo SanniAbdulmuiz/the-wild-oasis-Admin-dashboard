@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import Button from "../../ui/Button";
 import Form from "../../ui/Form";
-import FormRow from "../../ui/FormRow";
+import UsersFormRow from "../../ui/UsersFormRow";
 import Input from "../../ui/Input";
 import { useSignup } from "./useSignup";
 
@@ -21,16 +21,16 @@ function SignupForm() {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <FormRow label="Full name" error={errors?.fullName?.message}>
+      <UsersFormRow label="Full name" error={errors?.fullName?.message}>
         <Input
           type="text"
           id="fullName"
           disabled={isLoading}
           {...register("fullName", { required: "This field is required" })}
         />
-      </FormRow>
+      </UsersFormRow>
 
-      <FormRow label="Email address" error={errors?.email?.message}>
+      <UsersFormRow label="Email address" error={errors?.email?.message}>
         <Input
           type="email"
           id="email"
@@ -43,9 +43,9 @@ function SignupForm() {
             },
           })}
         />
-      </FormRow>
+      </UsersFormRow>
 
-      <FormRow
+      <UsersFormRow
         label="Password (min 8 characters)"
         error={errors?.password?.message}
       >
@@ -61,9 +61,12 @@ function SignupForm() {
             },
           })}
         />
-      </FormRow>
+      </UsersFormRow>
 
-      <FormRow label="Repeat password" error={errors?.passwordConfirm?.message}>
+      <UsersFormRow
+        label="Repeat password"
+        error={errors?.passwordConfirm?.message}
+      >
         <Input
           type="password"
           id="passwordConfirm"
@@ -74,9 +77,9 @@ function SignupForm() {
               value === getValues().password || "Passwords need to match",
           })}
         />
-      </FormRow>
+      </UsersFormRow>
 
-      <FormRow>
+      <UsersFormRow>
         {/* type is an HTML attribute! */}
         <Button
           variation="secondary"
@@ -87,7 +90,7 @@ function SignupForm() {
           Cancel
         </Button>
         <Button disabled={isLoading}>Create new user</Button>
-      </FormRow>
+      </UsersFormRow>
     </Form>
   );
 }

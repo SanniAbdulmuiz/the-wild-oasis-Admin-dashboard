@@ -12,6 +12,10 @@ const StyledFormRow = styled.div`
     gap: 2rem;
     padding: 1rem 0;
   }
+  @media (max-width: 34em) {
+    display: flex;
+    justify-content: space-between;
+  }
 
   &:first-child {
     padding-top: 0;

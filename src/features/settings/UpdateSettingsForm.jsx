@@ -1,5 +1,5 @@
 import Form from "../../ui/Form";
-import FormRow from "../../ui/FormRow";
+import FlexFormRow from "../../ui/FlexFormRow";
 import Input from "../../ui/Input";
 import Spinner from "../../ui/Spinner";
 import { useSettings } from "./useSettings";
@@ -28,7 +28,7 @@ function UpdateSettingsForm() {
 
   return (
     <Form>
-      <FormRow label="Minimum nights/booking">
+      <FlexFormRow label="Minimum nights/booking">
         <Input
           type="number"
           id="min-nights"
@@ -36,9 +36,9 @@ function UpdateSettingsForm() {
           disabled={isUpdating}
           onBlur={(e) => handleUpdate(e, "minBookingLength")}
         />
-      </FormRow>
+      </FlexFormRow>
 
-      <FormRow label="Maximum nights/booking">
+      <FlexFormRow label="Maximum nights/booking">
         <Input
           type="number"
           id="max-nights"
@@ -46,9 +46,9 @@ function UpdateSettingsForm() {
           disabled={isUpdating}
           onBlur={(e) => handleUpdate(e, "maxBookingLength")}
         />
-      </FormRow>
+      </FlexFormRow>
 
-      <FormRow label="Maximum guests/booking">
+      <FlexFormRow label="Maximum guests/booking">
         <Input
           type="number"
           id="max-guests"
@@ -56,9 +56,9 @@ function UpdateSettingsForm() {
           disabled={isUpdating}
           onBlur={(e) => handleUpdate(e, "maxGuestsPerBooking")}
         />
-      </FormRow>
+      </FlexFormRow>
 
-      <FormRow label="Breakfast price">
+      <FlexFormRow label="Breakfast price">
         <Input
           type="number"
           id="breakfast-price"
@@ -66,7 +66,7 @@ function UpdateSettingsForm() {
           disabled={isUpdating}
           onBlur={(e) => handleUpdate(e, "breakfastPrice")}
         />
-      </FormRow>
+      </FlexFormRow>
     </Form>
   );
 }

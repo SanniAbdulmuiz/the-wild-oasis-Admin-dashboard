@@ -118,6 +118,7 @@ const Price = styled.div`
 
     @media (max-width: 34em) {
       font-size: 1rem;
+      margin-left: 1rem;
     }
   }
 

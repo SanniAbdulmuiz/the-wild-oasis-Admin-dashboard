@@ -3,7 +3,7 @@ import { useState } from "react";
 import Button from "../../ui/Button";
 import FileInput from "../../ui/FileInput";
 import Form from "../../ui/Form";
-import FormRow from "../../ui/FormRow";
+import FlexFormRow from "../../ui/FlexFormRow";
 import Input from "../../ui/Input";
 
 import { useUser } from "./useUser";
@@ -44,11 +44,11 @@ function UpdateUserDataForm() {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <FormRow label="Email address">
+      <FlexFormRow label="Email address">
         <Input value={email} disabled />
-      </FormRow>
+      </FlexFormRow>
 
-      <FormRow label="Full name">
+      <FlexFormRow label="Full name">
         <Input
           type="text"
           value={fullName}
@@ -56,18 +56,18 @@ function UpdateUserDataForm() {
           id="fullName"
           disabled={isUpdating}
         />
-      </FormRow>
+      </FlexFormRow>
 
-      <FormRow label="Avatar image">
+      <FlexFormRow label="Avatar image">
         <FileInput
           id="avatar"
           accept="image/*"
           onChange={(e) => setAvatar(e.target.files[0])}
           disabled={isUpdating}
         />
-      </FormRow>
+      </FlexFormRow>
 
-      <FormRow>
+      <FlexFormRow>
         <Button
           type="reset"
           variation="secondary"
@@ -77,7 +77,7 @@ function UpdateUserDataForm() {
           Cancel
         </Button>
         <Button disabled={isUpdating}>Update account</Button>
-      </FormRow>
+      </FlexFormRow>
     </Form>
   );
 }

@@ -4,6 +4,10 @@ const StyledCheckbox = styled.div`
   display: flex;
   gap: 1.6rem;
 
+  @media (max-width: 34em) {
+    font-size: 1.2rem;
+  }
+
   & input[type="checkbox"] {
     height: 2.4rem;
     width: 2.4rem;

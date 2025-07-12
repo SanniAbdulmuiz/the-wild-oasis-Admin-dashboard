@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import Button from "../../ui/Button";
 import Form from "../../ui/Form";
-import FormRow from "../../ui/FormRow";
+import FlexFormRow from "../../ui/FlexFormRow";
 import Input from "../../ui/Input";
 
 import { useUpdateUser } from "./useUpdateUser";
@@ -18,7 +18,7 @@ function UpdatePasswordForm() {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <FormRow
+      <FlexFormRow
         label="New password (min 8 chars)"
         error={errors?.password?.message}
       >
@@ -35,9 +35,9 @@ function UpdatePasswordForm() {
             },
           })}
         />
-      </FormRow>
+      </FlexFormRow>
 
-      <FormRow
+      <FlexFormRow
         label="Confirm password"
         error={errors?.passwordConfirm?.message}
       >
@@ -52,13 +52,13 @@ function UpdatePasswordForm() {
               getValues().password === value || "Passwords need to match",
           })}
         />
-      </FormRow>
-      <FormRow>
+      </FlexFormRow>
+      <FlexFormRow>
         <Button onClick={reset} type="reset" variation="secondary">
           Cancel
         </Button>
         <Button disabled={isUpdating}>Update password</Button>
-      </FormRow>
+      </FlexFormRow>
     </Form>
   );
 }
