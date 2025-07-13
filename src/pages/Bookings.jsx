@@ -15,12 +15,10 @@ import {
 function Bookings() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // Close handler for sidebar
   function closeSidebar() {
     setIsSidebarOpen(false);
   }
 
-  // Register outside click ref
   const sidebarRef = useOutsideClick(closeSidebar);
 
   return (

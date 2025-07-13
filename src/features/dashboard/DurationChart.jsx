@@ -160,7 +160,7 @@ function DurationChart({ confirmedStays }) {
   const startData = isDarkMode ? startDataDark : startDataLight;
   const data = prepareData(startData, confirmedStays);
   const width = useWindowWidth();
-  const isSmall = width <= 34 * 16; // 34em in px (≈544px)
+  const isSmall = width <= 34 * 16; 
 
   return (
     <ChartBox>
